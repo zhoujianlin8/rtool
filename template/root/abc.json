@@ -1,0 +1,20 @@
+{
+  "name": "<%=appname%>",
+  "group": "<%=group%>",
+  "version": "@branch@",
+  "isPc": "<%=isPc%>",
+  "isSinglePage": "<%=isSinglePage%>",
+  "type": "rtool",
+  "options": {
+    <% if(isSinglePage){%>"open": "/src/index.html",
+   "isIgnoreIndex": false,<%}%>
+    "beforeBuildExec": "fie lint checkChanged",
+    "afterBuildExec": "fie git push"
+  },
+  "awpWebapp": {
+    "awpBuildDir":"<% if(isSinglePage){%>build<%}else{%>build/p<%}%>",
+    "dailyAppID": "",
+    "onlineAppID": "",
+    "appDir": ""
+  }
+}
